@@ -1,253 +1,706 @@
 /* Reset default margins and paddings */
 * {
-    margin: 10px;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-    background-color: #F0FDDF;
+  background-color: #f0fddf;
 }
 
 .container {
-    justify-content: center;
-    align-items: center;
-    width: 390px;
-    height: 844px;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    overflow-x: hidden;
-    background-color: #F0FDDF;
-    background: url(images/forest.png);
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: contain;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 390px;
+  height: 844px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  overflow-x: hidden;
+  background-color: #f0fddf;
+  background: url(images/forest.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .container✅ {
-    justify-content: center;
-    align-items: center;
-    width: 390px;
-    height: 844px;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    overflow-x: hidden;
-    background-color: #F0FDDF;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 390px;
+  height: 844px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  overflow-x: hidden;
+  background-color: #f0fddf;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 2.5rem;
-    color: #25463D;
-    margin-top: 5px;
-    margin-bottom: 40px;
-    
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: #25463d;
+  margin-top: 5px;
+  margin-bottom: 40px;
 }
 
 p {
-    color: #314D43;
+  color: #314d43;
 }
 
 .contact-form input {
-    color: #000000;
-    width: 290px;
-    height: 92px;
-    padding: 15px;
-    outline: none;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    border: 1px solid #F5F3E9;
-    font-size: 1.5rem;
-    background-color: #F5F3EA;
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
-        inset -3px -3px 6px rgba(255, 255, 255, 0.5);
-
+  color: #000000;
+  width: 290px;
+  height: 92px;
+  padding: 15px;
+  outline: none;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid #f5f3e9;
+  font-size: 1.5rem;
+  background-color: #f5f3ea;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.5);
 }
 
 input::-webkit-input-placeholder {
-    color: #314D43;
-    opacity: 0.8;
+  color: #314d43;
+  opacity: 0.8;
 }
 
 .contact-form input.error {
-    border-color: red;
+  border-color: red;
 }
 
 .contact-form input.valid {
-    border-color: #28a745;
+  border-color: #28a745;
 }
 
 .error-message {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin: 2px 0 6px 2px;
-    display: none;
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin: 2px 0 6px 2px;
+  display: none;
 }
 
 .error-message.active {
-    display: block;
+  display: block;
 }
 
 .btn {
-    width: 305px;
-    height: 67px;
-    padding: 15px;
-    border: none;
-    border-radius: 50px;
-    background-color: #48905F;
-    color: #EDFDD9;
-    font-size: 1.5rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 50px;
-    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4),
-        inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+  width: 305px;
+  height: 67px;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  background-color: #48905f;
+  color: #edfdd9;
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 50px;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
 
 .btn:hover {
-    background-color: #14532d;
-    color: #FFFFFF;
+  background-color: #14532d;
+  color: #ffffff;
 }
 
 .skip-btn {
-    margin-top: 20px;
-    background: none;
-    color: #1F5F36;
-    font-size: 1.5rem;
-    font-weight: bold;
-    -webkit-text-stroke: 0.5px #FFFFFF;
-    cursor: pointer;
-    border: none;
+  margin-top: 20px;
+  background: none;
+  color: #1f5f36;
+  font-size: 1.5rem;
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px #ffffff;
+  cursor: pointer;
+  border: none;
 }
 
 .btn-darkgreen {
-    background-color: #48905F;
-
+  background-color: #48905f;
 }
 
 .btn-lightgreen {
-    background-color: #F0FDDF;
-    color: #124B12;
-    box-shadow: inset 4px 4px 8px #558E4E,
-        inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+  background-color: #f0fddf;
+  color: #124b12;
+  box-shadow: inset 4px 4px 8px #558e4e,
+    inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
-
-
-
 
 .report-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #000000;
-    width: 342px;
-    height: 125px;
-    padding: 5px 22px 10px 23px;
-    margin-bottom: 20px;
-    border-radius: 24px;
-    border: 1px solid #F5F3E9;
-    background-color: #F5F3EA;
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
-        inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000000;
+  width: 342px;
+  height: 125px;
+  padding: 5px 22px 10px 23px;
+  margin-bottom: 20px;
+  border-radius: 24px;
+  border: 1px solid #f5f3e9;
+  background-color: #f5f3ea;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.5);
 }
-
 
 .report-card .icon {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
-
 
 .report-card .label {
-    flex-grow: 1;
-    text-align: left;
-    margin-left: 10px;
-    font-size: 1rem;
-    font-weight: 500;
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: 500;
 }
-
 
 .status {
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #fff;
-    align-items: center;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #fff;
+  align-items: center;
 }
-
 
 .status.received {
-    background: #808080;
+  background: #808080;
 }
 
-
 .status.in-progress {
-    background: #FDEF85;
-    color: #333;
-    /* width: 167px;
+  background: #fdef85;
+  color: #333;
+  /* width: 167px;
     height: 30px; */
 }
 
-
 .status.resolved {
-    background: #558E4E;
+  background: #558e4e;
 }
 
 /* LOGIN FORM */
 
 .login-form input {
-    color: #000000;
-    width: 290px;
-    height: 92px;
-    padding: 15px;
-    outline: none;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    border: 1px solid #F5F3E9;
-    font-size: 1.5rem;
-    background-color: #F5F3EA;
-    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
-        inset -3px -3px 6px rgba(255, 255, 255, 0.5);
-
+  color: #000000;
+  width: 290px;
+  height: 92px;
+  padding: 15px;
+  outline: none;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid #f5f3e9;
+  font-size: 1.5rem;
+  background-color: #f5f3ea;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.5);
 }
 
 input::-webkit-input-placeholder {
-    color: #314D43;
-    opacity: 0.8;
+  color: #314d43;
+  opacity: 0.8;
 }
 
 .login-form input.error {
-    border-color: red;
+  border-color: red;
 }
 
 .login-form input.valid {
-    border-color: #28a745;
+  border-color: #28a745;
 }
 
 .signup-btn {
-    margin-top: 20px;
-    background: none;
-    color: #1F5F36;
-    font-size: 1.5rem;
-    font-weight: bold;
-    -webkit-text-stroke: 0.5px #FFFFFF;
-    cursor: pointer;
-    border: none;
+  margin-top: 20px;
+  background: none;
+  color: #1f5f36;
+  font-size: 1.5rem;
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+/* Dyann CSS form file  */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
+
+:root {
+  /* Colors from Mission 3 */
+  --bg: #edfdd9; /* screen background (pale green) */
+  --card: #ffffff;
+  --soft: #f6fbf7;
+  --border: #d5e7da;
+  --text: #25463d;
+  --muted: #5f7a6f;
+
+  /* Mission 4: single fixed size (iPhone 12/13) */
+  --w: 390px;
+  --h: 844px;
+
+  /* Button gradient (Figma): #48905F → #17552E */
+  --g1: #48905f;
+  --g2: #17552e;
+  --btnGrad: linear-gradient(90deg, var(--g1) 0%, var(--g2) 100%);
+}
+
+/* Reset / base (removes any global margins) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: #edfdd9; /* around the phone */
+  color: var(--text);
+  font: 400 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+/* ---- Fixed-size phone frame ---- */
+.stage {
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+  background: var(--bg);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Forest illustration behind UI (export yours to images/forest.png) */
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg) url("images/forest.png") no-repeat bottom center /
+    contain;
+  pointer-events: none;
+  opacity: 0.98;
+}
+
+/* UI layer on top of forest */
+.screen {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 20px 16px 24px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  overflow: hidden; /* lock unless a page needs scroll */
+}
+.screen--scroll {
+  overflow: auto;
+}
+
+/* Type & helpers */
+h1 {
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+p {
+  color: #314d43;
+}
+.center {
+  text-align: center;
+}
+.mt8 {
+  margin-top: 8px;
+}
+.mt12 {
+  margin-top: 12px;
+}
+.mt16 {
+  margin-top: 16px;
+}
+
+/* Buttons (big rounded pill) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 305px;
+  height: 67px;
+  max-width: 100%;
+  border-radius: 9999px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.1rem;
+  background: var(--btnGrad);
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.35),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.2),
+    0 16px 28px rgba(23, 85, 46, 0.22);
+}
+.btn:hover {
+  filter: brightness(0.95);
+}
+.btn-ghost {
+  background: #fff;
+  color: var(--text);
+  border: 2px solid var(--border);
+  box-shadow: none;
+}
+.rail {
+  display: flex;
+  gap: 10px;
+}
+.grow {
+  flex: 1 1 auto;
+}
+
+/* Cards & inputs */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 18px 44px rgba(12, 31, 23, 0.1);
+}
+.pane {
+  padding: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--soft);
+  color: var(--text);
+  font: inherit;
+}
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Issue tiles (2x2 + Other) */
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+.tile {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 10px;
+  text-align: center;
+  display: grid;
+  gap: 6px;
+  place-items: center;
+  box-shadow: 0 8px 18px rgba(12, 31, 23, 0.08);
+}
+.tile .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+}
+.tile strong {
+  font-size: 13px;
+}
+
+/* Progress report cards (keeps your teammate's style) */
+.report-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 110px;
+  padding: 10px 16px;
+  border-radius: 24px;
+  border: 1px solid #f5f3e9;
+  background: #f5f3ea;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+  margin-bottom: 14px;
+}
+.report-card .icon {
+  width: 80px;
+  height: 80px;
+}
+.report-card .label {
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+.status.received {
+  background: #808080;
+}
+.status.in-progress {
+  background: #fdef85;
+  color: #333;
+}
+.status.resolved {
+  background: #558e4e;
+}
+
+/* Overlays (upload / finding location) */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+.modal {
+  width: 80%;
+  max-width: 290px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 18px 44px rgba(12, 31, 23, 0.18);
+  padding: 16px;
+}
+.modal h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+.option-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.option {
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+}
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 6px solid var(--border);
+  border-top-color: var(--g2);
+  animation: spin 1s linear infinite;
+  margin: 12px auto 8px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---- guard rails to stop right-side clipping ---- */
+.screen {
+  overflow-x: hidden;
+} /* only allow vertical overflow when we enable it */
+
+.center .btn {
+  /* ensure centered buttons actually center */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  /* responsive width inside the 390px frame */
+  max-width: 305px; /* your Figma pill width */
+  width: 100%; /* but shrink on tighter containers */
+}
+
+/* optional: make the ghost pill match your screenshot radius */
+.btn-ghost {
+  border-radius: 9999px;
+}
+
+/* ---- Fix 1: tile links shouldn't be blue/underlined ---- */
+.tile,
+.tile:link,
+.tile:visited {
+  color: var(--text);
+  text-decoration: none;
+}
+.tile strong {
+  text-decoration: none;
+}
+
+/* ---- Fix 2: footer rail buttons must fit side-by-side ---- */
+.rail {
+  display: flex;
+  gap: 12px; /* space between Back / Next */
+  padding: 0 4px; /* tiny inset to avoid edge clipping */
+}
+.rail .btn {
+  flex: 1 1 0; /* share width evenly */
+  width: auto; /* override the 305px base width */
+  max-width: none; /* remove the cap so they can grow */
+}
+
+/* Optional: keep single centered buttons nicely centered */
+.center .btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tile links should look like your theme, not blue/underlined */
+.tile,
+.tile:link,
+.tile:visited {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Icon square + the actual PNG inside it */
+.tile .icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.tile .icon img {
+  max-width: 72%;
+  max-height: 72%;
+  object-fit: contain;
+  display: block;
+}
+
+/* issuetype tiles */
+
+/* 2-column grid (already in your CSS, shown for clarity) */
+.grid {
+  display: grid;
+  gap: 12px; /* must match the gap used in calc below */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Make all tiles a consistent height */
+.tile {
+  min-height: 170px;
+}
+
+/* Center the last tile when there is an odd count, but keep it HALF width */
+.grid > .tile:last-child:nth-child(odd) {
+  grid-column: 1 / span 2; /* take the row */
+  justify-self: center; /* center within the row */
+  width: calc((100% - 12px) / 2); /* half the grid row minus the gap */
+}
+
+/* Map card Location */
+.map-card {
+  padding: 0;
+  height: 220px; /* tweak if need taller */
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 44px rgba(12, 31, 23, 0.1);
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Make the Leaflet canvas blend */
+.leaflet-container {
+  background: var(--soft);
+}
+.leaflet-control-attribution {
+  font-size: 10px;
+}
+
+/* Home CSS */
+
+/* Make the screen use exactly its height: top (auto) / hero (flex) / CTA (auto) */
+.screen{
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+}
+
+/* Trim the logo area */
+.brand{
+  padding:10px 0 0;     /* was 24px 0 8px */
+}
+.brand img{
+  width:180px;          /* a touch smaller so it sits tighter */
+}
+
+/* Let the hero fill the middle row perfectly */
+.hero{
+  position:relative;
+  min-height:0;         /* important when used in grid/flex to avoid overflow */
+  height:auto;          /* remove any fixed height */
+}
+
+/* Keep trees and people logic the same */
+.hero .trees{
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center bottom;
+  mask-image:linear-gradient(#000 82%, transparent 100%);
+}
+.hero .people{
+  position:absolute;
+  left:50%;
+  bottom:84px;          /* sit just above the button; adjust 76–92px if needed */
+  transform:translateX(-50%);
+  width:min(76%, 300px);
+  height:auto;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,.15));
+  pointer-events:none;
+}
+
+/* Pin the CTA to the bottom without extra padding */
+.rail{
+  position:static;      /* let grid place it at the bottom row */
+  padding:0 16px 10px;  /* tighter bottom space */
+}
+.btn{
+  height:60px;          /* a tad shorter to reduce bottom weight */
+  font-size:20px;
+  border-radius:999px;
 }
