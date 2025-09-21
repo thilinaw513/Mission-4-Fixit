@@ -437,7 +437,7 @@ textarea {
   font-size: 13px;
 }
 
-/* Progress report cards (keeps your teammate's style) */
+/* Progress report cards (keeps teammate's style) */
 .report-card {
   display: flex;
   align-items: center;
@@ -676,9 +676,10 @@ textarea {
 
 /* Keep trees and people logic the same */
 .hero .trees{
+  display:flex;
   inset:0;
   width:100%;
-  height:100%;
+  height:auto;
   object-fit:cover;
   object-position:center bottom;
   mask-image:linear-gradient(#000 82%, transparent 100%);
@@ -686,7 +687,7 @@ textarea {
 .hero .people{
   position:absolute;
   left:50%;
-  bottom:84px;          /* sit just above the button; adjust 76–92px if needed */
+  bottom:44px;          /* sit just above the button; adjust 76–92px if needed */
   transform:translateX(-50%);
   width:min(76%, 300px);
   height:auto;
@@ -704,3 +705,4 @@ textarea {
   font-size:20px;
   border-radius:999px;
 }
+

@@ -6,14 +6,14 @@
   <title>FixIt — Home</title>
   <link rel="stylesheet" href="fixit-app.css">
   <style>
-    /* ---- QUICK FIXES (safe to keep in your main CSS) ------------------ */
+    /* ---- QUICK FIXES (safe to keep in main CSS) ------------------ */
     :root{
-      --mint:#EDFDD9;           /* your light mint background */
+      --mint:#EDFDD9;           /* light mint background */
       --deep:#1F453D;           /* dark green text */
       --btnFrom:#48905F;        /* gradient start */
       --btnTo:#17552E;          /* gradient end   */
     }
-    /* Fixed canvas like your other pages (390×844) */
+    /* Fixed canvas like  other pages (390×844) */
     .stage{ display:grid; place-items:center; min-height:100svh; background:#0d0d0d; }
     .screen{
       width:390px; height:844px; border-radius:28px; overflow:hidden;
@@ -22,7 +22,7 @@
       position:relative;
     }
     /* Logo */
-    .brand{ display:flex; justify-content:center; padding:24px 0 8px; }
+    .brand{ display:flex; justify-content:left; padding:24px 0 8px; }
     .brand img{ width:200px; height:auto; display:block; filter:drop-shadow(0 10px 24px rgba(0,0,0,.12)); }
 
     /* Hero: trees behind, people anchored bottom, both centered */
@@ -50,6 +50,7 @@
       background:linear-gradient(180deg, var(--btnFrom), var(--btnTo));
       box-shadow: 0 12px 28px rgba(23,85,46,.28), inset 0 1px 0 rgba(255,255,255,.2);
     }
+    
     /* Global image sanity so nothing explodes */
     img{ max-width:100%; height:auto; }
   </style>
@@ -61,10 +62,11 @@
         <img src="images/fixitlogo.png" alt="FixIt">
       </header>
 
-      <section class="hero" aria-label="FixIt hero">
-        <img class="trees"  src="images/forest.png"    alt="">
-        <img class="people" src="images/logohome.png" alt="">
-      </section>
+    <div class="hero">
+  <img class="trees"  src="images/forest.png" alt="" />
+  <img class="people" src="images/logohome.png" alt="" />
+</div>
+
 
       <footer class="rail">
         <a class="btn" href="issuetype.html">Report an issue</a>
