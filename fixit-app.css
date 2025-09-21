@@ -51,11 +51,11 @@ h1 {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    font-size: 2.5rem;
+    font-size: 2 rem;
     color: #25463D;
     margin-top: 5px;
     margin-bottom: 40px;
-    
+
 }
 
 p {
@@ -84,15 +84,17 @@ input::-webkit-input-placeholder {
 }
 
 .contact-form input.error {
-    border-color: red;
+    border-color: #FD0000;
+    border-width: 2px;
 }
 
 .contact-form input.valid {
-    border-color: #28a745;
+    border-color: #4BD37B;
+    border-width: 2px;
 }
 
 .error-message {
-    color: red;
+    color: #FD0000;
     font-size: 14px;
     text-align: center;
     margin: 2px 0 6px 2px;
@@ -129,9 +131,9 @@ input::-webkit-input-placeholder {
     margin-top: 20px;
     background: none;
     color: #1F5F36;
-    font-size: 1.5rem;
-    font-weight: bold;
-    -webkit-text-stroke: 0.5px #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #FFFFFF;
     cursor: pointer;
     border: none;
 }
@@ -148,7 +150,10 @@ input::-webkit-input-placeholder {
         inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
 
-
+.logo {
+    width: 125px;
+    height: 125px
+}
 
 
 .report-card {
@@ -157,7 +162,7 @@ input::-webkit-input-placeholder {
     justify-content: space-between;
     color: #000000;
     width: 342px;
-    height: 125px;
+    height: 100px;
     padding: 5px 22px 10px 23px;
     margin-bottom: 20px;
     border-radius: 24px;
@@ -213,7 +218,7 @@ input::-webkit-input-placeholder {
 /* LOGIN FORM */
 
 .login-form input {
-    color: #000000;
+    color: #314D43;
     width: 290px;
     height: 92px;
     padding: 15px;
@@ -234,11 +239,13 @@ input::-webkit-input-placeholder {
 }
 
 .login-form input.error {
-    border-color: red;
+    border-color: #FD0000;
+    border-width: 2px;
 }
 
 .login-form input.valid {
-    border-color: #28a745;
+    border-color: #4BD37B;
+    border-width: 2px;
 }
 
 .signup-btn {
@@ -246,8 +253,77 @@ input::-webkit-input-placeholder {
     background: none;
     color: #1F5F36;
     font-size: 1.5rem;
-    font-weight: bold;
-    -webkit-text-stroke: 0.5px #FFFFFF;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+
+/* SIGNOUT BUTTON */
+
+
+.top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+
+}
+
+#signout-btn {
+    width: 100px;
+    height: 40px;
+    background-color: #6e0202;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+
+#signout-btn:hover {
+    background-color: #fc4242;
+}
+
+
+/* SIGNUP FORM */
+
+.signup-form input {
+    color: #314D43;
+    width: 290px;
+    height: 65px;
+    padding: 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 1px solid #F5F3E9;
+    font-size: 1.5rem;
+    background-color: #F5F3EA;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+        inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+}
+
+.signup-form input.valid {
+    border-color: #4BD37B;
+    border-width: 2px;
+}
+
+.signup-form input.error {
+    border-color: #FD0000;
+    border-width: 2px;
+}
+
+.login-btn {
+    margin-top: 2px;
+    background: none;
+    color: #1F5F36;
+    font-size: 1.2rem;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #FFFFFF;
     cursor: pointer;
     border: none;
 }
