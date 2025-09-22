@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FixIt — Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ---- QUICK FIXES (safe to keep in main CSS) ------------------ */
+    :root{
+      --mint:#EDFDD9;           /* light mint background */
+      --deep:#1F453D;           /* dark green text */
+      --btnFrom:#48905F;        /* gradient start */
+      --btnTo:#17552E;          /* gradient end   */
+    }
+    /* Fixed canvas like  other pages (390×844) */
+    .stage{ display:grid; place-items:center; min-height:100svh; background:#0d0d0d; }
+    .screen{
+      width:390px; height:844px; border-radius:28px; overflow:hidden;
+      background:var(--mint);
+      box-shadow:0 24px 80px rgba(0,0,0,.25);
+      position:relative;
+    }
+    /* Logo */
+    .brand{ display:flex; justify-content:left; padding:24px 0 8px; }
+    .brand img{ width:200px; height:auto; display:block; filter:drop-shadow(0 10px 24px rgba(0,0,0,.12)); }
+
+    /* Hero: trees behind, people anchored bottom, both centered */
+    .hero{ position:relative; width:100%; height:540px; }
+    .hero img{ position:absolute; display:block; }
+    .hero .trees{
+      inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:center bottom;
+      /* subtle vignette */
+      mask-image: linear-gradient(#000 80%, transparent 100%);
+    }
+    .hero .people{
+      left:50%; bottom:0; transform:translateX(-50%);
+      width:min(78%, 310px); height:auto;
+      object-fit:contain; pointer-events:none;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,.15));
+    }
+
+    /* CTA rail */
+    .rail{ position:absolute; left:16px; right:16px; bottom:24px; }
+    .btn{
+      display:flex; justify-content:center; align-items:center;
+      height:64px; border-radius:999px; color:#fff; font:600 22px/1.1 "Inter",system-ui,Arial,sans-serif;
+      text-decoration:none; letter-spacing:.2px;
+      background:linear-gradient(180deg, var(--btnFrom), var(--btnTo));
+      box-shadow: 0 12px 28px rgba(23,85,46,.28), inset 0 1px 0 rgba(255,255,255,.2);
+    }
+    
+    /* Global image sanity so nothing explodes */
+    img{ max-width:100%; height:auto; }
+  </style>
+</head>
+<body>
+  <!-- <div class="stage"> -->
+    <div class="screen">
+      <header class="brand">
+        <img src="images/fixitlogo.png" alt="FixIt">
+      </header>
+
+    <div class="hero">
+  <img class="trees"  src="images/forest.png" alt="" />
+  <img class="people" src="images/logohome.png" alt="" />
+</div>
+
+
+      <footer class="rail">
+        <a class="btn" href="issuetype.html">Report an issue</a>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
