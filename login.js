@@ -102,5 +102,5 @@ const newReportBtn = document.getElementById("submit");
 // Add a click event listener
 newReportBtn.addEventListener("click", function () {
   // Redirect to issue type page
-  window.location.href = "issue-type.html";
+  window.location.href = "issuetype.html";
 });
