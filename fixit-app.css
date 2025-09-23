@@ -152,9 +152,9 @@ input::-webkit-input-placeholder {
 }
 
 .btn-lightgreen {
-  background-color: #f0fddf;
+  background-color: #FFFFFF;
   color: #124b12;
-  box-shadow: inset 4px 4px 8px #FFECC0,
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4),
     inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
 
