@@ -65,7 +65,7 @@ h1 {
 }
 
 p {
-  color: #314d43;
+  color: black;
 }
 
 .contact-form input {
@@ -128,8 +128,11 @@ input::-webkit-input-placeholder {
 }
 
 .btn:hover {
-  background-color: #14532d;
+  background-color: black;
   color: #ffffff;
+  background-position: right center;
+  /* shifts gradient */
+  transform: translateY(-3px) scale(1.03);
 }
 
 .skip-btn {
@@ -145,13 +148,13 @@ input::-webkit-input-placeholder {
 }
 
 .btn-darkgreen {
-  background-color: #48905f;
+  background: linear-gradient(100deg, #48905F, #17552E);
 }
 
 .btn-lightgreen {
   background-color: #f0fddf;
   color: #124b12;
-  box-shadow: inset 4px 4px 8px #558e4e,
+  box-shadow: inset 4px 4px 8px #FFECC0,
     inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
 
@@ -160,7 +163,8 @@ input::-webkit-input-placeholder {
 
 .logo {
   height: 130px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .report-card {
