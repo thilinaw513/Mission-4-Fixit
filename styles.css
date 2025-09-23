@@ -3,11 +3,6 @@
    Shared UI styles + Home-only hero
    ========================================================= */
 
-<<<<<<< HEAD
-/* ---------- Imports ---------- */
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"); */
-=======
->>>>>>> main
 
 /* ---------- Theme & Layout Vars ---------- */
 :root {
@@ -22,8 +17,6 @@
   --border: #d5e7da;
   --text: #25463d;
 
-  
-
   /* Fixed device size (iPhone 12/13) */
   --w: 390px;
   --h: 844px;
@@ -32,7 +25,6 @@
   --g1: #48905f;
   --g2: #17552e;
   --btnGrad: linear-gradient(90deg, var(--g1) 0%, var(--g2) 100%);
-  
 
   /* Assets (update paths to your repo) */
   --logo-url: url("images/fixitlogo.png");
@@ -147,7 +139,6 @@ p {
   border-radius: 50px;
   box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4),
     inset -4px -4px 8px rgba(255, 255, 255, 0.2);
-
 }
 
 .btn:hover {
@@ -519,14 +510,9 @@ textarea {
   width: 100%;
   height: 64px;
   border-radius: 32px;
-<<<<<<< HEAD
-  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4),
-    inset -4px -4px 8px rgba(255, 255, 255, 0.2);
-=======
   /* box-shadow:
     0 14px 28px rgba(21,79,52,.25),
     inset 0 1px 0 rgba(255,255,255,.18); */
->>>>>>> main
 }
 
 /* How much higher you want the button */
@@ -540,8 +526,6 @@ textarea {
   margin-bottom: var(--cta-lift);
   /* lifts the button up */
 }
-
-
 
 
 /* Shorter screens: nudge up a touch */
