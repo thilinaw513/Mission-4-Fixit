@@ -128,7 +128,7 @@ input::-webkit-input-placeholder {
 }
 
 .btn:hover {
-  background-color: black;
+  background-color: #48905f;
   color: #ffffff;
   background-position: right center;
   /* shifts gradient */
