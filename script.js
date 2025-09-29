@@ -81,3 +81,34 @@ const skipBtn = document.querySelector(".skip-btn");
 skipBtn.addEventListener("click", () => {
   window.location.href = "confirmation-page.html";
 });
+
+
+
+// --------------------
+// DARK MODE TOGGLE
+// --------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("cb1");
+  const body = document.body;
+  const dayIcon = document.getElementById("dayIcon");
+  const nightIcon = document.getElementById("nightIcon");
+
+  // Hide night icon initially
+  nightIcon.style.display = "none";
+
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      // 🌙 Switch to Night Mode
+      body.classList.remove("day-background");
+      body.classList.add("night-background");
+      dayIcon.style.display = "none";
+      nightIcon.style.display = "inline-block";
+    } else {
+      // ☀️ Switch to Day Mode
+      body.classList.remove("night-background");
+      body.classList.add("day-background");
+      nightIcon.style.display = "none";
+      dayIcon.style.display = "inline-block";
+    }
+  });
+});

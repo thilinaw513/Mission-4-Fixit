@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailInput = loginForm.querySelector('input[placeholder="Email"]');
     const passwordInput = loginForm.querySelector('input[placeholder="Password"]');
 
-    // -----------------
-    // Live validation
-    // -----------------
     function validateEmail(email) {
       const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
       return pattern.test(email);
@@ -25,9 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     emailInput.addEventListener("input", () => liveValidate(emailInput));
     passwordInput.addEventListener("input", () => liveValidate(passwordInput));
 
-    // -----------------
-    // Submit validation + Mock API login
-    // -----------------
     loginForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       let hasError = false;
@@ -37,25 +31,22 @@ document.addEventListener("DOMContentLoaded", () => {
         i.nextElementSibling.classList.remove("active");
       });
 
-      // Email validation
       if (emailInput.value.trim() === "" || !validateEmail(emailInput.value)) {
         emailInput.classList.add("error");
-        emailInput.nextElementSibling.textContent = emailInput.value.trim() === "" ?
-          "Please enter your email" : "Enter a valid email address";
+        emailInput.nextElementSibling.textContent =
+          emailInput.value.trim() === "" ? "Please enter your email" : "Enter a valid email address";
         emailInput.nextElementSibling.classList.add("active");
         hasError = true;
       }
 
-      // Password validation
       if (passwordInput.value.trim() === "" || passwordInput.value.length < 8) {
         passwordInput.classList.add("error");
-        passwordInput.nextElementSibling.textContent = passwordInput.value.trim() === "" ?
-          "Please enter your password" : "Password must be at least 8 characters";
+        passwordInput.nextElementSibling.textContent =
+          passwordInput.value.trim() === "" ? "Please enter your password" : "Password must be at least 8 characters";
         passwordInput.nextElementSibling.classList.add("active");
         hasError = true;
       }
 
-      // If all valid, check Mock API
       if (!hasError) {
         try {
           const res = await fetch("https://68ca9796430c4476c34a1c61.mockapi.io/api/fixitapp/users");
@@ -75,63 +66,49 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Signup button
     if (signupBtn) signupBtn.addEventListener("click", () => window.location.href = "signup.html");
   }
 
-  // --------- SIGN OUT BUTTON (progress-report-page) ---------
+  // --------- SIGN OUT BUTTON ---------
   const signoutBtn = document.getElementById("signout-btn");
   if (signoutBtn) {
     signoutBtn.addEventListener("click", () => {
-      // Optional debug alert
-      // alert("Sign out clicked!");
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       window.location.href = "login.html";
     });
   }
 
-});
+  // --------- NEW REPORT BUTTON ---------
+  const newReportBtn = document.getElementById("submit");
+  if (newReportBtn) {
+    newReportBtn.addEventListener("click", () => {
+      window.location.href = "issuetype.html";
+    });
+  }
 
-
-// New Report button / Sumit another issue
-
-// Select the button
-const newReportBtn = document.getElementById("submit");
-
-// Add a click event listener
-newReportBtn.addEventListener("click", function () {
-  // Redirect to issue type page
-  window.location.href = "issuetype.html";
-});
-
-
-
-// --------------------
-// DARK MODE TOGGLE
-// --------------------
-document.addEventListener("DOMContentLoaded", () => {
+  // --------- DARK MODE TOGGLE ---------
   const toggle = document.getElementById("cb1");
   const body = document.body;
   const dayIcon = document.getElementById("dayIcon");
   const nightIcon = document.getElementById("nightIcon");
 
-  // Hide night icon initially
-  nightIcon.style.display = "none";
+  if (toggle && dayIcon && nightIcon) {
+    nightIcon.style.display = "none";
 
-  toggle.addEventListener("change", () => {
-    if (toggle.checked) {
-      // 🌙 Switch to Night Mode
-      body.classList.remove("day-background");
-      body.classList.add("night-background");
-      dayIcon.style.display = "none";
-      nightIcon.style.display = "inline-block";
-    } else {
-      // ☀️ Switch to Day Mode
-      body.classList.remove("night-background");
-      body.classList.add("day-background");
-      nightIcon.style.display = "none";
-      dayIcon.style.display = "inline-block";
-    }
-  });
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        body.classList.remove("day-background");
+        body.classList.add("night-background");
+        dayIcon.style.display = "none";
+        nightIcon.style.display = "inline-block";
+      } else {
+        body.classList.remove("night-background");
+        body.classList.add("day-background");
+        nightIcon.style.display = "none";
+        dayIcon.style.display = "inline-block";
+      }
+    });
+  }
+
 });
