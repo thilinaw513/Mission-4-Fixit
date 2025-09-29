@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateEmail(email) {
       const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
       return pattern.test(email);
-    } 
+    }
 
     function liveValidate(input) {
       if (input.value.trim() === "") input.classList.remove("valid");
@@ -103,4 +103,35 @@ const newReportBtn = document.getElementById("submit");
 newReportBtn.addEventListener("click", function () {
   // Redirect to issue type page
   window.location.href = "issuetype.html";
+});
+
+
+
+// --------------------
+// DARK MODE TOGGLE
+// --------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("cb1");
+  const body = document.body;
+  const dayIcon = document.getElementById("dayIcon");
+  const nightIcon = document.getElementById("nightIcon");
+
+  // Hide night icon initially
+  nightIcon.style.display = "none";
+
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      // 🌙 Switch to Night Mode
+      body.classList.remove("day-background");
+      body.classList.add("night-background");
+      dayIcon.style.display = "none";
+      nightIcon.style.display = "inline-block";
+    } else {
+      // ☀️ Switch to Day Mode
+      body.classList.remove("night-background");
+      body.classList.add("day-background");
+      nightIcon.style.display = "none";
+      dayIcon.style.display = "inline-block";
+    }
+  });
 });
