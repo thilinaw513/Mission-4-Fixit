@@ -84,8 +84,8 @@ skipBtn.addEventListener("click", () => {
 
 
 
-// --------------------
-// DARK MODE TOGGLE
+/// --------------------
+// DARK MODE TOGGLE (Persistent Across Pages)
 // --------------------
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("cb1");
@@ -93,22 +93,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const dayIcon = document.getElementById("dayIcon");
   const nightIcon = document.getElementById("nightIcon");
 
-  // Hide night icon initially
-  nightIcon.style.display = "none";
+  if (!toggle || !dayIcon || !nightIcon) return; // skip if no toggle
 
+  // 🧠 Load the saved theme (persists across pages)
+  const savedMode = localStorage.getItem("themeMode");
+
+  if (savedMode === "night") {
+    body.classList.add("night-background");
+    toggle.checked = true;
+    dayIcon.style.display = "none";
+    nightIcon.style.display = "inline-block";
+  } else {
+    body.classList.add("day-background");
+    toggle.checked = false;
+    dayIcon.style.display = "inline-block";
+    nightIcon.style.display = "none";
+  }
+
+  // 🌓 Save theme when user toggles
   toggle.addEventListener("change", () => {
     if (toggle.checked) {
-      // 🌙 Switch to Night Mode
       body.classList.remove("day-background");
       body.classList.add("night-background");
       dayIcon.style.display = "none";
       nightIcon.style.display = "inline-block";
+      localStorage.setItem("themeMode", "night"); // 💾 remember
     } else {
-      // ☀️ Switch to Day Mode
       body.classList.remove("night-background");
       body.classList.add("day-background");
       nightIcon.style.display = "none";
       dayIcon.style.display = "inline-block";
+      localStorage.setItem("themeMode", "day"); // 💾 remember
     }
   });
 });

@@ -46,7 +46,18 @@ body.night-background label {
 body.night-background input {
   background-color: #F5F3EA;
   border-color: #444;
-  color: #fff;
+  color: #000000;
+}
+
+body.night-background input.error {
+  border-color: #fd0000;
+  border-width: 2px;
+
+}
+
+body.night-background input.valid {
+  border-color: #4bd37b;
+  border-width: 2px;
 }
 
 body.night-background .btn-darkgreen {
@@ -56,28 +67,26 @@ body.night-background .btn-darkgreen {
 
 
 .button-con {
-  position: fixed;       /* fixed to viewport */
-  top: 50px;             /* distance from top */
-  right: 50px;           /* distance from right */
-  display: flex;         /* align icons + toggle in a row */
+  position: absolute;
+  top: 50px; /* distance from top */
+  right: 50px; /* distance from right */
+  display: flex; /* align icons + toggle in a row */
   align-items: center;
-  gap: 10px;             /* spacing between icons and toggle */
-  z-index: 1000; 
-}
-
-#dayIcon, #nightIcon {
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  fill: #f0c800;
-  flex-shrink: 0; 
-    
+  gap: 10px; /* spacing between icons and toggle */
+  z-index: 1000;
 }
 
 #dayIcon,
 #nightIcon {
+  width: 35px;
+  height: 35px;
   cursor: pointer;
+  fill: #f0c800;
+  flex-shrink: 0;
+  display: inline-block;
+
 }
+
 
 .toggle {
   display: none;
@@ -165,28 +174,26 @@ body.night-background .btn-darkgreen {
   border-radius: 1em;
 }
 
-.toggle:checked+.toggle-button:after {
-  left: 50%;
-}
 
-
-/* ===== HEADER (TOP ONLY, NON-STICKY) ===== */
+/* ===== HEADER ===== */
 header {
   width: 100%;
-  height: 100px;
-  background-color: #fff;
+  height: 120px;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 25px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1px;
 }
 
 /* ===== LOGO ===== */
 .header-logo {
-  height: 70px;
+  height: 90px;
   display: block;
 }
+
+
 
 /* ===== DARK MODE TOGGLE BUTTON ===== */
 #mode-toggle {
@@ -239,7 +246,7 @@ p {
   padding: 15px;
   margin-bottom: 30px;
   border-radius: 20px;
-  border: 1px solid #f5f3e9;
+  border: 2px solid #f5f3e9;
   font-size: 1.2rem;
   background-color: #f5f3ea;
   box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
@@ -255,13 +262,10 @@ input::-webkit-input-placeholder {
 /* ======== VALIDATION STATES ======== */
 input.error {
   border-color: #fd0000;
-  border-width: 2px;
-
 }
 
 input.valid {
   border-color: #4bd37b;
-  border-width: 2px;
 }
 
 /* ======== ERROR MESSAGES ======== */
@@ -471,35 +475,58 @@ input.valid {
   }
 }
 
+/* ======== REFERENCE NUMBER ======== */
 
-
-/* ===== HEADER (TOP ONLY, NON-STICKY) ===== */
-header {
-  width: 100%;
-  height: 120px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 25px;
-  margin-bottom: 1px;
+#refNumber {
+  font-weight: bold;
+  color: #2b7a78;
+  margin-right: 8px;
 }
 
-/* ===== LOGO ===== */
-.header-logo {
-  height: 90px;
-  display: block;
-}
-
-/* ===== DARK MODE TOGGLE BUTTON ===== */
-#mode-toggle {
+#copyRefBtn {
+  width: 100px;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: medium;
   border: none;
-  background: transparent;
-  font-size: 22px;
+  background-color: #88d498;
+  color: #fff;
+  border-radius: 30px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: background-color 0.2s ease;
 }
 
-#mode-toggle:hover {
-  transform: scale(1.1);
+#copyRefBtn:hover {
+  background-color: #66bb78;
+}
+
+
+/* ======== ACCESSIBILITY FEATURES ======== */
+
+
+/* Skip link styling */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #1e90ff;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Visually hidden labels for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

@@ -1,9 +1,10 @@
 // --------------------
 // SIGN UP SCRIPT
 // --------------------
-
 document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.querySelector(".signup-form");
+
+  if (!signupForm) return;
 
   const firstName = signupForm.querySelector('input[placeholder="First name"]');
   const lastName = signupForm.querySelector('input[placeholder="Last name"]');
@@ -35,13 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
     input.classList.toggle("error", !isValid);
   }
 
-  // ✅ Live validation events
+  // ✅ Live validation
   [firstName, lastName, emailPhone, password, confirmPassword].forEach(input => {
     input.addEventListener("input", () => liveValidate(input));
   });
 
   // ✅ On form submit
-  signupForm.addEventListener("submit", (event) => {
+  signupForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     let hasError = false;
 
@@ -49,35 +50,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorMessages = signupForm.querySelectorAll(".error-message");
     errorMessages.forEach(e => e.classList.remove("active"));
 
-    // First name
+    // Validation checks
     if (firstName.value.trim() === "") {
       firstName.classList.add("error");
       firstName.nextElementSibling.classList.add("active");
       hasError = true;
     }
 
-    // Last name
     if (lastName.value.trim() === "") {
       lastName.classList.add("error");
       lastName.nextElementSibling.classList.add("active");
       hasError = true;
     }
 
-    // Email or Phone
     if (!validateEmailPhone(emailPhone.value.trim())) {
       emailPhone.classList.add("error");
       emailPhone.nextElementSibling.classList.add("active");
       hasError = true;
     }
 
-    // Password
     if (password.value.length < 8) {
       password.classList.add("error");
       password.nextElementSibling.classList.add("active");
       hasError = true;
     }
 
-    // Confirm password
     if (confirmPassword.value !== password.value || confirmPassword.value.length < 8) {
       confirmPassword.classList.add("error");
       confirmPassword.nextElementSibling.textContent = "Passwords do not match";
@@ -85,27 +82,55 @@ document.addEventListener("DOMContentLoaded", () => {
       hasError = true;
     }
 
-    // ✅ Success: redirect
-    if (!hasError) {
+    // Stop if any validation failed
+    if (hasError) return;
+
+    // ✅ Prepare data for MockAPI
+    const userData = {
+      firstName: firstName.value.trim(),
+      lastName: lastName.value.trim(),
+      emailOrPhone: emailPhone.value.trim(),
+      password: password.value.trim(),
+      createdAt: new Date().toISOString(),
+    };
+
+    // ✅ Send to MockAPI
+    try {
+      const response = await fetch("https://68ca9796430c4476c34a1c61.mockapi.io/api/fixitapp/new-registrations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) throw new Error("Failed to register user");
+
+      // 🎉 Success
       alert("Successfully registered 🎉");
+      signupForm.reset();
+
+      // Redirect to overlay page
       window.location.href = "success-overlay-page.html";
+    } catch (error) {
+      console.error("❌ Error registering user:", error);
+      alert("❌ Something went wrong while creating your account. Please try again.");
     }
   });
 });
 
-
-// Back to Login button
-
+// --------------------
+// BACK TO LOGIN BUTTON
+// --------------------
 document.addEventListener("DOMContentLoaded", () => {
   const backBtn = document.getElementById("backToLoginBtn");
-  backBtn.addEventListener("click", () => {
-    window.location.href = "login.html";
-  });
+  if (backBtn) {
+    backBtn.addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
+  }
 });
 
-
 // --------------------
-// DARK MODE TOGGLE
+// DARK MODE TOGGLE (Persistent Across Pages)
 // --------------------
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("cb1");
@@ -113,22 +138,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const dayIcon = document.getElementById("dayIcon");
   const nightIcon = document.getElementById("nightIcon");
 
-  // Hide night icon initially
-  nightIcon.style.display = "none";
+  if (!toggle || !dayIcon || !nightIcon) return;
 
+  // 🧠 Load the saved theme
+  const savedMode = localStorage.getItem("themeMode");
+
+  if (savedMode === "night") {
+    body.classList.add("night-background");
+    toggle.checked = true;
+    dayIcon.style.display = "none";
+    nightIcon.style.display = "inline-block";
+  } else {
+    body.classList.add("day-background");
+    toggle.checked = false;
+    dayIcon.style.display = "inline-block";
+    nightIcon.style.display = "none";
+  }
+
+  // 🌓 Save and switch themes
   toggle.addEventListener("change", () => {
     if (toggle.checked) {
-      // 🌙 Switch to Night Mode
       body.classList.remove("day-background");
       body.classList.add("night-background");
       dayIcon.style.display = "none";
       nightIcon.style.display = "inline-block";
+      localStorage.setItem("themeMode", "night");
     } else {
-      // ☀️ Switch to Day Mode
       body.classList.remove("night-background");
       body.classList.add("day-background");
       nightIcon.style.display = "none";
       dayIcon.style.display = "inline-block";
+      localStorage.setItem("themeMode", "day");
     }
   });
 });

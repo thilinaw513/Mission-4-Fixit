@@ -93,22 +93,55 @@ document.addEventListener("DOMContentLoaded", () => {
   const dayIcon = document.getElementById("dayIcon");
   const nightIcon = document.getElementById("nightIcon");
 
-  if (toggle && dayIcon && nightIcon) {
-    nightIcon.style.display = "none";
+   // 🧠 Load the saved theme (persists across pages)
+  const savedMode = localStorage.getItem("themeMode");
 
-    toggle.addEventListener("change", () => {
-      if (toggle.checked) {
-        body.classList.remove("day-background");
-        body.classList.add("night-background");
-        dayIcon.style.display = "none";
-        nightIcon.style.display = "inline-block";
-      } else {
-        body.classList.remove("night-background");
-        body.classList.add("day-background");
-        nightIcon.style.display = "none";
-        dayIcon.style.display = "inline-block";
-      }
-    });
+  if (savedMode === "night") {
+    body.classList.add("night-background");
+    toggle.checked = true;
+    dayIcon.style.display = "none";
+    nightIcon.style.display = "inline-block";
+  } else {
+    body.classList.add("day-background");
+    toggle.checked = false;
+    dayIcon.style.display = "inline-block";
+    nightIcon.style.display = "none";
   }
 
+  // 🌓 Save theme when user toggles
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      body.classList.remove("day-background");
+      body.classList.add("night-background");
+      dayIcon.style.display = "none";
+      nightIcon.style.display = "inline-block";
+      localStorage.setItem("themeMode", "night"); // 💾 remember
+    } else {
+      body.classList.remove("night-background");
+      body.classList.add("day-background");
+      nightIcon.style.display = "none";
+      dayIcon.style.display = "inline-block";
+      localStorage.setItem("themeMode", "day"); // 💾 remember
+    }
+  });
 });
+
+
+// --------- REFEENCE NUMBER (CONFIRMATION PAGE) ---------
+
+const refNumberEl = document.getElementById("refNumber");
+  const copyRefBtn = document.getElementById("copyRefBtn");
+
+  // Generate random reference number (e.g. REF-384726)
+  const randomRef = "REF-" + Math.floor(100000 + Math.random() * 900000);
+  refNumberEl.textContent = randomRef;
+
+  // Copy to clipboard
+  copyRefBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(randomRef)
+      .then(() => {
+        copyRefBtn.textContent = "Copied!";
+        setTimeout(() => copyRefBtn.textContent = "Copy", 1500);
+      })
+      .catch(err => console.error("Failed to copy:", err));
+  });
